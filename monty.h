@@ -50,7 +50,7 @@ extern stack_t *head;
 
 
 int _strlen(char *str);
-int filter_len(char *str, char **parser);
+int filter_len(char *str);
 char *filter(char *str, char **parser);
 char *token(char *fstr);
 int word_count(char *str);

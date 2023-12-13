@@ -19,7 +19,7 @@ return (i);
  * @str: str
  * Return: int
  */
-int filter_len(char *str, char **parser)
+int filter_len(char *str)
 {
 int i;
 int cnt;

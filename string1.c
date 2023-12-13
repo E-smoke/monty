@@ -49,7 +49,7 @@ char *filter(char *str, char **parser)
 int i;
 int cnt;
 char *filtered_line;
-filtered_line = (char *)malloc(sizeof(char) * (filter_len(str, parser) + 1));
+filtered_line = (char *)malloc(sizeof(char) * (filter_len(str) + 1));
 if (filtered_line == NULL)
 {
 malloc_error(parser);
