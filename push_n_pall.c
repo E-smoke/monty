@@ -28,11 +28,19 @@ return (n);
  */
 void push(stack_t **hp, unsigned int ln, char **parser)
 {
+char *str;
 int n;
 stack_t *new_element;
 if (parser_len(parser) != 2)
 {
-opcode_error(parser[0], ln, parser);
+print_error("L");
+str = _ratoi(ln);
+print_error(str);
+free(str);
+print_error(": usage: push integer\n");
+free_2d(parser);
+free_stack();
+exit(EXIT_FAILURE);
 }
 n = _atoi(parser[1], parser);
 pue(parser[1], n, ln, parser);
