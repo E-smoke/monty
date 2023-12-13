@@ -45,7 +45,6 @@ exit(EXIT_FAILURE);
 void opcode_error(char *opcode, int ln, char **parser)
 {
 char *str;
-free_stack();
 print_error("L");
 str = _ratoi(ln);
 print_error(str);
@@ -54,6 +53,7 @@ print_error(": unknown instruction ");
 print_error(opcode);
 print_error("\n");
 free_2d(parser);
+free_stack();
 exit(EXIT_FAILURE);
 }
 
