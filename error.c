@@ -5,9 +5,11 @@
  */
 void malloc_error(char **parser)
 {
+char *str;
 free_2d(parser);
 free_stack();
-printf("Error: malloc failed\n");
+str = "Error: malloc failed\n";
+print_error(str);
 exit(EXIT_FAILURE);
 }
 /**
@@ -16,7 +18,10 @@ exit(EXIT_FAILURE);
  */
 void file_error(char *filename)
 {
-printf("Error: Can't open file %s\n", filename);
+char *str = "Error: Can't open file ";
+print_error(str);
+print_error(filename);
+print_error("\n");
 exit(EXIT_FAILURE);
 }
 /**
@@ -27,7 +32,7 @@ void usage_error(int n)
 {
 if (n != 2)
 {
-printf("USAGE: monty file\n");
+print_error("USAGE: monty file\n");
 exit(EXIT_FAILURE);
 }
 }
@@ -39,20 +44,34 @@ exit(EXIT_FAILURE);
  */
 void opcode_error(char *opcode, int ln, char **parser)
 {
+char *str;
 free_stack();
-printf("L%d: unknown instruction %s\n", ln, opcode);
+print_error("L");
+str = _ratoi(ln);
+print_error(str);
+free(str);
+print_error(": unknown instruction ");
+print_error(opcode);
+print_error("\n");
 free_2d(parser);
 exit(EXIT_FAILURE);
 }
 
 
 
-void naming_error(char *name)
+
+void pue(char *str,int n, int ln, char **parser)
 {
-int len;
-len = _strlen(name);
-if (!(name[len - 1] == 'm' && name[len - 2] == '.'))
+if (n == 0 && _strlen(str) != 1 && str[0] != '0')
 {
+char *str;
+print_error("L");
+str = _ratoi(ln);
+print_error(str);
+free(str);
+print_error(": usage: push integer\n");
+free_2d(parser);
+free_stack();
 exit(EXIT_FAILURE);
 }
 }

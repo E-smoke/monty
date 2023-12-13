@@ -35,6 +35,7 @@ if (parser_len(parser) != 2)
 opcode_error(parser[0], ln, parser);
 }
 n = _atoi(parser[1], parser);
+pue(parser[1], n, ln, parser);
 new_element = (stack_t *)malloc(sizeof(stack_t));
 if (new_element == NULL)
 {

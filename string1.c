@@ -90,3 +90,49 @@ filtered_line[cnt] = '\0';
 }
 return (filtered_line);
 }
+
+
+
+
+
+
+char* _ratoi(int number)
+{
+int i, isNegative, left, right, maxLength;
+char *str;
+maxLength = 12;
+str = (char *)malloc(sizeof(char) * maxLength);
+if (str == NULL)
+{
+return NULL;
+}
+i = 0;
+isNegative = 0;
+if (number < 0)
+{
+isNegative = 1;
+number = -number;
+}
+do
+{
+str[i++] = number % 10 + '0';
+number /= 10;
+}
+while (number > 0);
+if (isNegative)
+{
+str[i++] = '-';
+}
+str[i] = '\0';
+left = isNegative ? 1 : 0;
+right = i - 1;
+while (left < right)
+{
+char temp = str[left];
+str[left] = str[right];
+str[right] = temp;
+left++;
+right--;
+}
+return (str);
+}
