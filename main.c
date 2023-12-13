@@ -1,6 +1,5 @@
 #include "monty.h"
 stack_t *head = NULL;
-char **parser = NULL;
 
 
 int main(int argc, char *argv[])
@@ -8,7 +7,8 @@ int main(int argc, char *argv[])
 int i, ln, ind, fd;
 char buff[BS];
 char *buff_ptr;
-instruction_t functs[] = 
+char **parser = NULL;
+instruction_t3 functs[] = 
 {
 {"push", push},
 {"pall", pall},
@@ -32,12 +32,12 @@ if (ind == -1)
 free_stack();
 exit(EXIT_FAILURE);
 }
-buff_ptr = filter(buff_ptr);
-parser = fparser(buff_ptr);
+buff_ptr = filter(buff_ptr, parser);
+parser = fparser(buff_ptr, parser);
 free(buff_ptr);
 if (parser[0] == NULL)
 {
-free_2d();
+free_2d(parser);
 continue;
 }
 i = 0;
@@ -45,15 +45,15 @@ while (functs[i].f != NULL)
 {
 if (_strcmp(functs[i].opcode, parser[0]) == 1)
 {
-(functs[i].f)(&head, ln);
-free_2d();
+(functs[i].f)(&head, ln, parser);
+free_2d(parser);
 break;
 }
 ++i;
 }
 if (functs[i].f == NULL)
 {
-opcode_error(parser[0], ln);
+opcode_error(parser[0], ln, parser);
 }
 }
 free_stack();

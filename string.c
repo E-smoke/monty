@@ -19,7 +19,7 @@ return (i);
  * @str: str
  * Return: int
  */
-int filter_len(char *str)
+int filter_len(char *str, char **parser)
 {
 int i;
 int cnt;
@@ -146,9 +146,10 @@ return (cnt);
 /**
  * fparser - returns each tokens(words) in a str
  * @fstr: filtered str
+ * @parser: 2p
  * Return: ptrs to strs
  */
-char **fparser(char *fstr)
+char **fparser(char *fstr, char **parser)
 {
 int word_size;
 int i;
@@ -159,7 +160,7 @@ para = (char **)malloc(sizeof(char *) * (word_size + 1));
 if (para == NULL)
 {
 free(fstr);
-malloc_error();
+malloc_error(parser);
 }
 for (i = 0; i < word_size; ++i)
 {
@@ -168,7 +169,7 @@ para[i] = (char *)malloc(sizeof(char) * (_strlen(wtoken) + 1));
 if (para[i] == NULL)
 {
 free(fstr);
-malloc_error();
+malloc_error(parser);
 }
 strcpy(para[i], wtoken);
 }

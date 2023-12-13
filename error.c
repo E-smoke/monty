@@ -1,10 +1,11 @@
 #include "monty.h"
 /**
  * malloc_error - error for malloc
+ * @parser: 1p
  */
-void malloc_error(void)
+void malloc_error(char **parser)
 {
-free_2d();
+free_2d(parser);
 free_stack();
 printf("Error: malloc failed\n");
 exit(EXIT_FAILURE);
@@ -34,12 +35,12 @@ exit(EXIT_FAILURE);
  * opcode_error - error wrong opcode
  * @opcode: takes in opcode
  * @ln: line number of the opcode
+ * @parser: 3p
  */
-void opcode_error(char *opcode, int ln)
+void opcode_error(char *opcode, int ln, char **parser)
 {
 free_stack();
 printf("L%d: unknown instruction %s\n", ln, opcode);
-free_2d();
+free_2d(parser);
 exit(EXIT_FAILURE);
 }
-

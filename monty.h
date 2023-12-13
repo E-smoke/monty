@@ -28,43 +28,43 @@ struct stack_s *next;
 
 
 /**
- * struct instruction_s - opcode and its function
+ * struct instruction_s3 - opcode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
  *
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
  */
-typedef struct instruction_s
+typedef struct instruction_s3
 {
 char *opcode;
-void (*f)(stack_t **stack, unsigned int line_number);
-} instruction_t;
+void (*f)(stack_t **stack, unsigned int line_number, char **parser);
+} instruction_t3;
 
 
 
 
-extern char **parser;
+
 extern stack_t *head;
 
 
 
 int _strlen(char *str);
-int filter_len(char *str);
-char *filter(char *str);
+int filter_len(char *str, char **parser);
+char *filter(char *str, char **parser);
 char *token(char *fstr);
 int word_count(char *str);
-char **fparser(char *fstr);
-int parser_len(void);
-int _atoi(char *str);
-void push(stack_t **hp, unsigned int ln);
-void pall(stack_t **hp, unsigned int ln);
-void malloc_error(void);
+char **fparser(char *fstr,char **parser);
+int parser_len(char **parser);
+int _atoi(char *str, char **parser);
+void push(stack_t **hp, unsigned int ln, char **parser);
+void pall(stack_t **hp, unsigned int ln, char **parser);
+void malloc_error(char **parser);
 void file_error(char *filename);
 void usage_error(int n);
-void opcode_error(char *opcode, int ln);
+void opcode_error(char *opcode, int ln, char **parser);
 int read_line(unsigned int fd, char **buff);
-void free_2d(void);
+void free_2d(char **parser);
 void free_stack(void);
 int _strcmp(char *str1, char *str2);
 

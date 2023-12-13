@@ -1,8 +1,9 @@
 #include "monty.h"
 /**
  * free_2d - frees the parser global var
+ * @parser: 1p
  */
-void free_2d(void)
+void free_2d(char **parser)
 {
 int i;
 i = 0;

@@ -1,9 +1,10 @@
 #include "monty.h"
 /**
  * parser_len - number of strings in parser
+ * @parser: 1p
  * Return: the number
  */
-int parser_len(void)
+int parser_len(char **parser)
 {
 int len;
 char **str;
@@ -39,18 +40,19 @@ return (1);
 }
 /**
  * filter - removes leading, trailling and multiple spaces
- * @str: the string to filter
+ * @str: the string to filteir
+ * @parser: 2p
  * Return: filtered string in malloc form
  */
-char *filter(char *str)
+char *filter(char *str, char **parser)
 {
 int i;
 int cnt;
 char *filtered_line;
-filtered_line = (char *)malloc(sizeof(char) * (filter_len(str) + 1));
+filtered_line = (char *)malloc(sizeof(char) * (filter_len(str, parser) + 1));
 if (filtered_line == NULL)
 {
-malloc_error();
+malloc_error(parser);
 }
 i = 0;
 cnt = 0;
