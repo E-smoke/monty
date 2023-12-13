@@ -15,6 +15,7 @@ instruction_t3 functs[] =
 {NULL, NULL},
 };
 usage_error(argc);
+naming_error(argv[1]);
 fd = open(argv[1], O_RDONLY);
 if (fd == -1)
 {

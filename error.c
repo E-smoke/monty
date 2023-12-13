@@ -44,3 +44,15 @@ printf("L%d: unknown instruction %s\n", ln, opcode);
 free_2d(parser);
 exit(EXIT_FAILURE);
 }
+
+
+
+void naming_error(char *name)
+{
+int len;
+len = _strlen(name);
+if (!(name[len - 1] == 'm' && name[len - 2] == '.'))
+{
+exit(EXIT_FAILURE);
+}
+}

@@ -67,5 +67,6 @@ int read_line(unsigned int fd, char **buff);
 void free_2d(char **parser);
 void free_stack(void);
 int _strcmp(char *str1, char *str2);
+void naming_error(char *name);
 
 #endif
