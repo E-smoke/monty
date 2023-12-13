@@ -31,7 +31,7 @@ void push(stack_t **hp, unsigned int ln, char **parser)
 char *str;
 int n;
 stack_t *new_element;
-if (parser_len(parser) != 2)
+if (parser_len(parser) < 2)
 {
 print_error("L");
 str = _ratoi(ln);
