@@ -74,10 +74,8 @@ new_element->n = n;
 void pall(stack_t **hp, unsigned int ln, char **parser)
 {
 stack_t *current;
-if (parser_len(parser) != 1)
-{
-opcode_error(parser[0], ln, parser);
-}
+(void)ln;
+(void)parser;
 current = (*hp);
 while (current != NULL)
 {
