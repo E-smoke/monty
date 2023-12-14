@@ -94,5 +94,6 @@ void pint(stack_t **hp, unsigned int ln, char **parser);
 void pop(stack_t **hp, unsigned int ln, char **parser);
 void swap(stack_t **hp, unsigned int ln, char **parser);
 void add(stack_t **hp, unsigned int ln, char **parser);
+void nop(stack_t **hp, unsigned int ln, char **parser);
 
 #endif
