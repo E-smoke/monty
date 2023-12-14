@@ -13,7 +13,7 @@ free_2d(parser);
 free_stack();
 exit(EXIT_FAILURE);
 }
-if ((*hp)->n < 0 || (*hp)->n > 127)
+if ((*hp)->n < 32 || (*hp)->n > 126)
 {
 print_error("L");
 str = _ratoi(ln);
