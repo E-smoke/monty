@@ -96,6 +96,8 @@ void swap(stack_t **hp, unsigned int ln, char **parser);
 void add(stack_t **hp, unsigned int ln, char **parser);
 void nop(stack_t **hp, unsigned int ln, char **parser);
 void sub(stack_t **hp, unsigned int ln, char **parser);
-void mult(stack_t **hp, unsigned int ln, char **parser);
+void mul(stack_t **hp, unsigned int ln, char **parser);
 void division(stack_t **hp, unsigned int ln, char **parser);
+void mod(stack_t **hp, unsigned int ln, char **parser);
+
 #endif

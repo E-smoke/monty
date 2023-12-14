@@ -10,6 +10,8 @@ char *buff_ptr;
 char **parser = NULL;
 instruction_t3 functs[] = 
 {
+{"mod", mod},
+{"mul", mul},
 {"div", division},
 {"sub", sub},
 {"nop", nop},
