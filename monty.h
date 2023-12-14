@@ -102,5 +102,6 @@ void mod(stack_t **hp, unsigned int ln, char **parser);
 void pchar(stack_t **hp, unsigned int ln, char **parser);
 void pstr(stack_t **hp, unsigned int ln, char **parser);
 void rotl(stack_t **hp, unsigned int ln, char **parser);
+void rotr(stack_t **hp, unsigned int ln, char **parser);
 
 #endif
