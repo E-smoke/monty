@@ -58,5 +58,6 @@ opcode_error(parser[0], ln, parser);
 }
 }
 free_stack();
+close(fd);
 return (0);
 }
