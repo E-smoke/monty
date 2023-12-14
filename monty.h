@@ -27,6 +27,26 @@ struct stack_s *next;
 
 
 
+
+/**
+ * struct instruction_s - opcode and its function
+ * @opcode: the opcode
+ * @f: function to handle the opcode
+ *
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO
+ */
+typedef struct instruction_s
+{
+        char *opcode;
+        void (*f)(stack_t **stack, unsigned int line_number);
+} instruction_t;
+
+
+
+
+
+
 /**
  * struct instruction_s3 - opcode and its function
  * @opcode: the opcode
@@ -72,5 +92,6 @@ void pue(char *str, int n, int ln, char **parser);
 void print_error(char *str);
 void pint(stack_t **hp, unsigned int ln, char **parser);
 void pop(stack_t **hp, unsigned int ln, char **parser);
+void swap(stack_t **hp, unsigned int ln, char **parser);
 
 #endif
