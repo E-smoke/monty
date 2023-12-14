@@ -70,5 +70,6 @@ int _strcmp(char *str1, char *str2);
 char *_ratoi(int number);
 void pue(char *str, int n, int ln, char **parser);
 void print_error(char *str);
+void pint(stack_t **hp, unsigned int ln, char **parser);
 
 #endif

@@ -11,6 +11,7 @@ char **parser = NULL;
 instruction_t3 functs[] = 
 {
 {"push", push},
+{"pint", pint},
 {"pall", pall},
 {NULL, NULL},
 };
