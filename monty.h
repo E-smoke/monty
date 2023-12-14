@@ -100,5 +100,6 @@ void mul(stack_t **hp, unsigned int ln, char **parser);
 void division(stack_t **hp, unsigned int ln, char **parser);
 void mod(stack_t **hp, unsigned int ln, char **parser);
 void pchar(stack_t **hp, unsigned int ln, char **parser);
+void pstr(stack_t **hp, unsigned int ln, char **parser);
 
 #endif

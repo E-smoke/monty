@@ -19,7 +19,7 @@ print_error("L");
 str = _ratoi(ln);
 print_error(str);
 free(str);
-print_error(": can't pchar, value out of range");
+print_error(": can't pchar, value out of range\n");
 free_2d(parser);
 free_stack();
 exit(EXIT_FAILURE);
