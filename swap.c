@@ -16,7 +16,10 @@ exit(EXIT_FAILURE);
 }
 temp = (*hp);
 (*hp) = (*hp)->next;
+if (((*hp)->next) != NULL)
+{
 ((*hp)->next)->prev = temp;
+}
 temp->next = (*hp)->next;
 (*hp)->prev = NULL;
 (*hp)->next = temp;
