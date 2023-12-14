@@ -10,6 +10,7 @@ char *buff_ptr;
 char **parser = NULL;
 instruction_t3 functs[] = 
 {
+{"add", add},
 {"swap", swap},
 {"pop", pop},
 {"push", push},
