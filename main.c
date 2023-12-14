@@ -40,6 +40,10 @@ while (ind == 2)
 buff_ptr = buff;
 ind = read_line(fd, &buff_ptr);
 ++ln;
+if (buff_ptr[0] == '#')
+{
+continue;
+}
 if (ind == -1)
 {
 free_stack();
