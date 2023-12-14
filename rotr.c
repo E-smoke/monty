@@ -21,5 +21,6 @@ temp = *hp;
 last->next = temp;
 last->prev = NULL;
 temp->prev = last;
+(*hp) = last;
 }
 }
