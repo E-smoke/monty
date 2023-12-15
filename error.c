@@ -62,13 +62,13 @@ exit(EXIT_FAILURE);
 
 void pue(char *str,int n, int ln, char **parser)
 {
-if (n == 0 && _strlen(str) != 1 && str[0] != '0')
+char *str1;
+if (n == 0 && str[0] != '0')
 {
-char *str;
 print_error("L");
-str = _ratoi(ln);
-print_error(str);
-free(str);
+str1 = _ratoi(ln);
+print_error(str1);
+free(str1);
 print_error(": usage: push integer\n");
 free_2d(parser);
 free_stack();

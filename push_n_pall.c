@@ -7,17 +7,8 @@
 int _atoi(char *str, char **parser)
 {
 int n;
-if (_strlen(str) == 1 && str[0] == '0')
-{
-return (0);
-}
+(void)parser;
 n = atoi(str);
-if (n == 0)
-{
-free_2d(parser);
-free_stack();
-exit(EXIT_FAILURE);
-}
 return (n);
 }
 /**
