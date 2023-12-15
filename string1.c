@@ -75,7 +75,7 @@ filtered_line[cnt] = str[i];
 ++i;
 ++cnt;
 }
-if (i == 0)
+if (cnt == 0)
 {
 filtered_line[0] = '\0';
 return (filtered_line);

@@ -43,7 +43,7 @@ continue;
 ++i;
 ++cnt;
 }
-if (str[i - 1] == ' ')
+if (str[i - 1] == ' ' && cnt != 0)
 {
 --cnt;
 }
