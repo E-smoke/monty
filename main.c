@@ -40,16 +40,17 @@ while (ind == 2)
 buff_ptr = buff;
 ind = read_line(fd, &buff_ptr);
 ++ln;
-if (buff_ptr[0] == '#')
-{
-continue;
-}
 if (ind == -1)
 {
 free_stack();
 exit(EXIT_FAILURE);
 }
 buff_ptr = filter(buff_ptr, parser);
+if (buff_ptr[0] == '#')
+{
+free(buff_ptr);
+continue;
+}
 parser = fparser(buff_ptr, parser);
 free(buff_ptr);
 if (parser[0] == NULL)
